@@ -45,18 +45,6 @@ function CreateCabinForm({ cabinToEdit }) {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      {/* <FormRow2>
-        <Label htmlFor="name">Cabin name</Label>
-        <Input
-          type="text"
-          id="name"
-          {...register("name", {
-            required: "This field is requierd",
-          })}
-        />
-        {errors?.name?.message && <Error>{errors.name.message}</Error>}
-      </FormRow2> */}
-
       <FormRow label={"Cabin name"} error={errors?.name?.message}>
         {
           <Input

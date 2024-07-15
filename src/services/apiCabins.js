@@ -33,11 +33,13 @@ export async function createEditCabin(newCabin, id) {
   if (id) query = query.update({ ...newCabin, image: imagePath }).eq("id", id);
 
   const { data, error } = await query.select().single();
-  console.log(imagePath);
+
   if (error) {
     console.log(error);
     throw new Error("Cabin could not be created");
   }
+
+  if (hasImagePath) return data;
 
   // 2. upload image
   const { error: storageError } = await supabase.storage
