@@ -3,6 +3,7 @@ import { getSettings } from "../../services/apiSettings";
 
 export function useSettings() {
   const queryClient = useQueryClient();
+
   const {
     isLoading,
     data: settings,
